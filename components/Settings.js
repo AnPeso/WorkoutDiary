@@ -1,23 +1,35 @@
 import React, { useContext } from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { WorkoutContext } from '../components/Context';
+import styles from '../styles/Styles';
 
 const SettingsScreen = () => {
-  const { setUnit } = useContext(WorkoutContext);
+  const { unit, setUnit } = useContext(WorkoutContext);
 
   return (
     <View style={styles.container}>
-      <Text>Select Units:</Text>
-      <Button title="Kilometers" onPress={() => setUnit('km')} />
-      <Button title="Miles" onPress={() => setUnit('mi')} />
+      <Text style={styles.title}>Select Units:</Text>
+      <View style={styles.radioContainer}>
+        <TouchableOpacity 
+          style={styles.radioOption} 
+          onPress={() => setUnit('km')}
+        >
+          <Text style={styles.radioText}>
+            {unit === 'km' ? '●' : '○'} Kilometers
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          style={styles.radioOption} 
+          onPress={() => setUnit('mi')}
+        >
+          <Text style={styles.radioText}>
+            {unit === 'mi' ? '●' : '○'} Miles
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-  },
-});
 
 export default SettingsScreen;
