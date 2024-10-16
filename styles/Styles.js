@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     // Add styles for AddExerciseScreen
     container: {
-        flex: 1,
-        alignItems: 'stretch',
-        padding: 10,
-        backgroundColor: '#f7d8d8'
+      flex: 1,
+      fontFamily: 'Dosis-Regular', 
+      padding:25,
+      backgroundColor: '#f7d8d8'
     },
    addExerciseInput: {
     fontSize: 20,
@@ -14,13 +14,18 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 2,
     borderRadius: 6,
-    borderColor: '#c9abab'
+    borderColor: '#c9abab'},
+
+  dateButton: {
+    backgroundColor: '#f4dae4', // Customize the button color
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginBottom: 15
   },
-  Picker: {
-    flexDirection: "row",
-    justifyContent: 'center',
-    marginTop: 10,
-    fontSize: 30
+  dateButtonText: {
+    color: '#000000', // Customize the text color
+  
   },
   box: {
     backgroundColor: '#fff',
@@ -42,7 +47,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   exerciseText: {
-    fontSize: 16,
+    fontSize: 15,
   },
   HorizontalPicker: {
     flexDirection: 'row',
@@ -64,11 +69,13 @@ const styles = StyleSheet.create({
   addExerciseButton: {
     alignItems: 'center',
     justifyContent: 'center',
+    margin: 15,
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: 'black',
+    backgroundColor: '#e7a5bf',
+    borderRadius: 8,
     },
 
 //     // Add styles for ExerciseHistoryScreen
@@ -85,6 +92,7 @@ const styles = StyleSheet.create({
     historySummaryText: {
         fontSize: 16,
         fontWeight: 'bold',
+        fontFamily:'Dosis-Regular'
     },
     historyItem: {
         padding: 10,
@@ -94,8 +102,9 @@ const styles = StyleSheet.create({
 
 //     // Add styles for SettingsScreen
       title: {
-    fontSize: 20,
+    fontSize: 30,
     marginBottom: 10,
+    fontFamily: 'Dosis-Regular'
   },
   radioContainer: {
     marginVertical: 10,
@@ -109,6 +118,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginLeft: 10,
   },
+  ButtonText: {
+    fontSize: 25,
+    fontFamily: 'Dosis-Regular'
+  }
 });
 
 export default styles;

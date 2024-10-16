@@ -16,7 +16,7 @@ const ExerciseHistoryScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.box}>
-        <Text>Total Distance: {totalDistance.toFixed(2)} {unit}</Text>
+        <Text style={styles.title}>Total Distance: {totalDistance.toFixed(2)} {unit}</Text>
         <FlatList
           data={workouts}
           keyExtractor={(item, index) => index.toString()}

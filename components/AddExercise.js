@@ -1,6 +1,5 @@
-// AddExercise.js
 import React, { useState, useContext } from 'react';
-import { View, TextInput, Button, Alert, StyleSheet, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { View, TextInput, Button, Alert, StyleSheet, Keyboard, TouchableWithoutFeedback, TouchableOpacity, Text } from 'react-native';
 import { WorkoutContext } from '../components/Context';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import HorizontalPicker from './HorizontalPicker'; 
@@ -24,7 +23,6 @@ const AddExerciseScreen = () => {
       return;
     }
 
-    
     const distanceInKm = unit === 'mi' ? dist * 1.60934 : dist; 
 
     addWorkout({ sportType, distance: distanceInKm, duration: dur, date });
@@ -43,49 +41,55 @@ const AddExerciseScreen = () => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-          <HorizontalPicker
-            items={[
-              { label: 'Football', value: 'football' },
-              { label: 'Baseball', value: 'baseball' },
-              { label: 'Hockey', value: 'hockey' },
-            ]}
-            selectedValue={sportType}
-            onValueChange={setSportType}
+        <Text style={styles.title}>Add your exercise</Text>
+        <HorizontalPicker
+          items={[
+            { label: 'Football', value: 'football' },
+            { label: 'Baseball', value: 'baseball' },
+            { label: 'Hockey', value: 'hockey' },
+          ]}
+          selectedValue={sportType}
+          onValueChange={setSportType}
+        />
+        <TextInput
+          style={styles.addExerciseInput}
+          placeholder={`Distance (${unit})`} 
+          value={distance}
+          onChangeText={setDistance}
+          keyboardType="numeric"
+        />
+        <TextInput
+          style={styles.addExerciseInput}
+          placeholder="Duration (min)"
+          value={duration}
+          onChangeText={setDuration}
+          keyboardType="numeric"
+        />
+        <TouchableOpacity
+          style={styles.dateButton}
+          onPress={() => setShowDatePicker(true)}
+        >
+          <Text style={styles.dateButtonText}>{`Select Date: ${date.toDateString()}`}</Text>
+        </TouchableOpacity>
+        {showDatePicker && (
+          <DateTimePicker
+            value={date}
+            mode='date'
+            display='default'
+            onChange={onChangeDate}
+            maximumDate={new Date()}
           />
-          <TextInput
-            style={styles.addExerciseInput}
-            placeholder={`Distance (${unit})`} 
-            value={distance}
-            onChangeText={setDistance}
-            keyboardType="numeric"
-          />
-          <TextInput
-            style={styles.addExerciseInput}
-            placeholder="Duration (min)"
-            value={duration}
-            onChangeText={setDuration}
-            keyboardType="numeric"
-          />
-          <Button
-            title={`Select Date: ${date.toDateString()}`}
-            onPress={() => setShowDatePicker(true)}
-          />
-          {showDatePicker && (
-            <DateTimePicker
-              value={date}
-              mode="date"
-              display="default"
-              onChange={onChangeDate}
-            />
-          )}
-          <Button
-            style={styles.addExerciseButton}
-            title="Add Workout"
-            onPress={handleAddWorkout}
-          />
-        </View>
+        )}
+        <TouchableOpacity
+          style={styles.addExerciseButton}
+          onPress={handleAddWorkout}
+        >
+          <Text style={styles.ButtonText}>Add workout</Text>
+        </TouchableOpacity>
+      </View>
     </TouchableWithoutFeedback>
   );
 };
+
 
 export default AddExerciseScreen;
