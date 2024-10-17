@@ -44,9 +44,9 @@ const AddExerciseScreen = () => {
         <Text style={styles.title}>Add your exercise</Text>
         <HorizontalPicker
           items={[
-            { label: 'Football', value: 'football' },
-            { label: 'Baseball', value: 'baseball' },
-            { label: 'Hockey', value: 'hockey' },
+            { label: 'Run', value: 'Run' },
+            { label: 'Ski', value: 'Ski' },
+            { label: 'Swim', value: 'Swim' },
           ]}
           selectedValue={sportType}
           onValueChange={setSportType}

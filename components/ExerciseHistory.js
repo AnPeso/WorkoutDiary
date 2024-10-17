@@ -1,4 +1,4 @@
-// ExerciseHistory.js
+
 import React, { useContext } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { WorkoutContext } from '../components/Context';
@@ -26,7 +26,10 @@ const ExerciseHistoryScreen = () => {
             return (
               <View style={styles.exerciseBox}>
                 <Text style={styles.exerciseText}>
-                  ${item.sportType}: ${distanceInSelectedUnit.toFixed(2)} ${unit}, ${item.duration} min on ${item.date.toDateString()}
+                Sport type: {item.sportType} {'\n'}
+                Distance: {distanceInSelectedUnit.toFixed(2)} {unit} {'\n'}
+                Duration: {item.duration} min {'\n'} 
+                Date: {item.date.toDateString()}
                 </Text>
               </View>
             );

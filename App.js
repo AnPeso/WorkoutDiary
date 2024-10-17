@@ -8,11 +8,12 @@ import ExerciseListScreen from './components/ExerciseHistory';
 import SettingsScreen from './components/Settings';
 import Icon from 'react-native-vector-icons/Ionicons'; 
 
+
 const Tab = createBottomTabNavigator();
 
 const loadFonts = async () => {
   await Font.loadAsync({
-    'Dosis-Regular': require('./assets/fonts/Dosis-Regular.ttf'), // Adjust the path if necessary
+    'Dosis-Regular': require('./assets/fonts/Dosis-Regular.ttf'), 
   });
 };
 
@@ -24,7 +25,7 @@ const Main = () => {
   }, []);
 
   if (!fontsLoaded) {
-    return null; // or a loading indicator
+    return null; 
   }
 
   return (

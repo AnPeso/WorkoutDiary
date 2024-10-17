@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    // Add styles for AddExerciseScreen
+  
     container: {
       flex: 1,
       fontFamily: 'Dosis-Regular', 
@@ -17,14 +17,14 @@ const styles = StyleSheet.create({
     borderColor: '#c9abab'},
 
   dateButton: {
-    backgroundColor: '#f4dae4', // Customize the button color
+    backgroundColor: '#f4dae4', 
     padding: 10,
     borderRadius: 5,
     alignItems: 'center',
     marginBottom: 15
   },
   dateButtonText: {
-    color: '#000000', // Customize the text color
+    color: '#000000', 
   
   },
   box: {
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#c9abab',
     borderRadius: 5,
+    flex: 0.5
   },
   selectedOption: {
     backgroundColor: '#e7a5bf',
@@ -77,12 +78,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#e7a5bf',
     borderRadius: 8,
     },
-
-//     // Add styles for ExerciseHistoryScreen
-//     historyContainer: {
-//         flex: 1,
-//         padding: 16,
-//     },
     historySummary: {
         marginBottom: 10,
         padding: 10,
@@ -100,8 +95,8 @@ const styles = StyleSheet.create({
         borderBottomColor: '#ccc',
     },
 
-//     // Add styles for SettingsScreen
-      title: {
+
+    title: {
     fontSize: 30,
     marginBottom: 10,
     fontFamily: 'Dosis-Regular'

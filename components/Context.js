@@ -3,11 +3,11 @@ import React, { createContext, useState } from 'react';
 export const WorkoutContext = createContext();
 
 const convertToKilometers = (distance, unit) => {
-  return unit === 'mi' ? distance * 1.60934 : distance; // Convert miles to kilometers
+  return unit === 'mi' ? distance * 1.60934 : distance; 
 };
 
 const convertToMiles = (distance, unit) => {
-  return unit === 'km' ? distance / 1.60934 : distance; // Convert kilometers to miles
+  return unit === 'km' ? distance / 1.60934 : distance; 
 };
 
 export const WorkoutProvider = ({ children }) => {
