@@ -26,7 +26,7 @@ const ExerciseHistoryScreen = () => {
             return (
               <View style={styles.exerciseBox}>
                 <Text style={styles.exerciseText}>
-                  {`${item.sportType}: ${distanceInSelectedUnit.toFixed(2)} ${unit}, ${item.duration} min on ${item.date.toDateString()}`}
+                  ${item.sportType}: ${distanceInSelectedUnit.toFixed(2)} ${unit}, ${item.duration} min on ${item.date.toDateString()}
                 </Text>
               </View>
             );
@@ -39,4 +39,3 @@ const ExerciseHistoryScreen = () => {
 
 
 export default ExerciseHistoryScreen;
-
